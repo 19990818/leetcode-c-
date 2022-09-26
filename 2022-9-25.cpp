@@ -41,7 +41,7 @@ public:
     int robotSim(vector<int>& commands, vector<vector<int>>& obstacles) {
         map<pair<int,int>,int> m;
         for (vector<int> obstacle:obstacles){
-            m[pair(obstacle[0],obstacle[1])]=1;
+            m[make_pair(obstacle[0],obstacle[1])]=1;
         }
         int status=0;
         int ans=0;
@@ -53,7 +53,7 @@ public:
             else if(command==-2)
                 status=(status+3)%4;
             else{
-                for (int i=0;i<command&&m[pair(curx+dx[status],cury+dy[status])]==0;i++){
+                for (int i=0;i<command&&m[make_pair(curx+dx[status],cury+dy[status])]==0;i++){
                     curx=curx+dx[status];
                     cury=cury+dy[status];
                 }
