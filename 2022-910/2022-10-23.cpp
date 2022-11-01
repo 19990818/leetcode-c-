@@ -76,8 +76,9 @@ public:
                     ans+=i+'0';
                 }
             }
-        }
+        };
         dfs(0);
-        ans+=string(n-1,'0')
+        ans+=string(n-1,'0');
+        return ans;
     }  
 };
