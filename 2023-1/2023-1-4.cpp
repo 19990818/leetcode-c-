@@ -25,3 +25,13 @@ public:
         return left;
     }
 };
+
+
+class Solution {
+public:
+    int countEven(int num) {
+        auto isEven=[&]bool(int n){
+
+        }
+    }
+};
