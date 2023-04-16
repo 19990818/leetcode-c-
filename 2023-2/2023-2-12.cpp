@@ -1,6 +1,7 @@
 #include <string>
 #include <vector>
 #include <math.h>
+#include <algorithm>
 using namespace std;
 
 
@@ -65,6 +66,13 @@ public:
 class Solution {
 public:
     long long countFairPairs(vector<int>& nums, int lower, int upper) {
-        
+        long long res=0;
+        sort(nums.begin(),nums.end());
+        for(int i=0;i<nums.size();++i){
+            auto l=lower_bound(nums.begin()+i+1,nums.end(),lower-nums[i]);
+            auto r=upper_bound(nums.begin()+i+1,nums.end(),upper-nums[i]);
+            res+=(long long)(r-l);
+        }
+        return res;
     }
 };
